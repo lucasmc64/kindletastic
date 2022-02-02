@@ -1,0 +1,136 @@
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Citation blocks */
+
+blockquote {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+  position: relative;
+}
+
+blockquote::before {
+  content: "";
+  background-color: currentColor;
+  opacity: 0.125;
+  height: 100%;
+  width: 0.5em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Code blocks */
+
+code {
+  position: relative;
+  padding: 0.125em 0.25em;
+}
+
+body > code,
+div > code,
+section > code,
+article > code,
+pre > code {
+  display: block;
+  padding: 0.5em 1em;
+}
+
+table thead tr th::before,
+code::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 0.25em;
+  background-color: currentColor;
+  opacity: 0.125;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Lists */
+
+ul li:not(:last-child),
+ol li:not(:last-child) {
+  margin-top: 0.25em;
+}
+
+/* Images */
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  position: relative;
+}
+
+table thead tr th,
+table tbody tr td {
+  text-align: center;
+  position: relative;
+}
+
+table thead tr th {
+  padding: 0.25em;
+}
+
+table tbody tr td {
+  padding: 0.5em;
+}
+
+table thead tr:first-child th:first-child::before {
+  border-top-left-radius: 0.25em;
+}
+
+table thead tr:first-child th:last-child::before {
+  border-top-right-radius: 0.25em;
+}
+
+table thead tr th::before {
+  border-radius: 0;
+}
+
+table tbody tr td::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.125;
+  display: block;
+  border: 0.25em solid currentColor;
+  border-top: 0;
+  height: 100%;
+}
+
+table tbody tr td:not(:last-child)::before {
+  width: 100%;
+  border-right: 0;
+}
+
+table tbody tr td:last-child::before {
+  width: 100%;
+}
+
+table tbody tr:last-child td:first-child::before {
+  border-bottom-left-radius: 0.25em;
+}
+
+table tbody tr:last-child td:last-child::before {
+  border-bottom-right-radius: 0.25em;
+}
